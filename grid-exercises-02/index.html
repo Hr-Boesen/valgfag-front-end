@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* browser reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* global styles */
+        body {
+            font-family: sans-serif;
+        }
+        .my-padding {
+            padding: 1em;
+        }
+        .full-bleed {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .centered {
+            display: grid;
+            grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* specific styles */
+        .special-offer {
+            grid-column: 1/2;
+            background-color: lightgreen;
+        }
+        .special-offer:last-of-type {
+            grid-column: 2/3;
+            background: lightyellow;
+        }
+        article {
+            grid-column: 2/4;
+            background: lightcoral;
+        }
+        .two-columns {
+            grid-column: 2/4;
+            background: lightblue;
+        }
+        .two-columns p {
+            column-count: 2;
+            column-gap: 2em;
+        }
+        .cat {
+            background-image: url("cat.jpg");
+            height: 30em;
+            background-size: cover;
+            background-position: center;
+        }
+        .cat-headline {
+            display: flex;
+            align-items: center;
+            grid-column: 1/3;
+        }
+        .cat-headline h1 {
+            text-transform: uppercase;
+            color: white;
+            font-size: 2em;
+            letter-spacing: 2px;
+            text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+        }
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 3fr 1fr 1fr;
+            grid-gap: 1em;
+            margin: 1em 0;
+        }
+        .sub-grid>div {
+            background: rgba(0, 0, 0, 0.4);
+            font-size: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .one {
+            grid-column: 1/2;
+        }
+        .two {
+            grid-column: 2/4;
+            grid-row: 2/3;
+        }
+        .three {
+            grid-column: 3/4;
+        }
+        .four {
+            grid-column: span 2;
+            grid-row: 3/4;
+        }
+    </style>
+</head>
+
+<body>
+   <section class="full-bleed">
+       <div class="special-offer my-padding">
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, aliquam. Vitae corporis vel quas eveniet eius cumque provident harum rerum!</p>
+       </div>
+       <div class="special-offer my-padding">
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eligendi debitis iusto iste libero officiis et, quia error.</p>
+       </div>
+   </section>
+   <section class="centered">
+       <article class="my-padding">
+           <h1>Headline</h1>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima repudiandae eos tempore atque est consequatur iusto omnis eum blanditiis officiis cupiditate quae, fugit nostrum expedita asperiores aliquam voluptatem, deserunt exercitationem!</p>
+       </article>
+   </section>
+   <section class="centered">
+       <article class="two-columns my-padding">
+           <h1>Two-column paragraph</h1>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat nihil distinctio perspiciatis at voluptatum hic blanditiis, odit itaque totam velit architecto voluptas expedita ipsam esse impedit ullam ratione pariatur id suscipit nesciunt. Iure, doloremque harum inventore assumenda earum facere quod fugiat labore dignissimos minima dolores cumque atque odit commodi reprehenderit. Aut, voluptatum laboriosam neque quaerat ad consequuntur, tempore ducimus ipsam.</p>
+       </article>
+       <aside>
+           <img src="http://via.placeholder.com/400x240">
+       </aside>
+   </section>
+   <section class="centered cat">
+        <div class="cat-headline my-padding">
+            <h1>Cats rule the web</h1>
+        </div>
+        <div class="sub-grid">
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+        </div>
+   </section>
+</body>
+</html>
